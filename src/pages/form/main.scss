@@ -1,0 +1,291 @@
+.signinup_main_contaier {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 100px;
+
+    a p {
+        font-size: 40px;
+        font-weight: 500;
+        margin: 20px;
+        color: #565656;
+        letter-spacing: 2px;
+    }
+
+    .form_main_container {
+        width: 70%;
+        display: grid;
+        grid-template-columns: 50% 50%;
+
+        .left_container {
+            height: 500px;
+            font-size: 26px;
+            font-weight: 600;
+
+            .heading {
+                font-size: 26px;
+                font-weight: 600;
+                text-align: center;
+
+                span {
+                    color: #07b274;
+                }
+            }
+
+            img {
+                width: 70%;
+                height: 350px;
+            }
+
+            .first {
+                font-size: 18px;
+                font-weight: 600;
+            }
+
+            .secound {
+                font-size: 16px;
+                font-weight: 500;
+            }
+        }
+
+        .right_container {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+
+            .heading {
+                font-size: 26px;
+                font-weight: 600;
+                text-align: center;
+            }
+
+            .reverse {
+                display: flex;
+                flex-direction: column-reverse;
+                gap: 10px;
+            }
+
+            form {
+                width: 100%;
+
+                &::before {
+                    position: absolute;
+                    content: "";
+                    width: 40%;
+                    height: 40%;
+                    left: 27%;
+                    z-index: -1;
+                    background: radial-gradient(circle, #e9f3ed, #d2f988 60%, #352901 100%);
+                    filter: blur(70px);
+                    border-radius: 50%;
+                }
+
+                .input_box {
+                    position: relative;
+
+                    label {
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        padding: 10px 0;
+                        font-size: 16px;
+                        color: #000;
+                        pointer-events: none;
+                        transition: .5s;
+                    }
+
+                    input {
+                        width: 100%;
+                        padding: 10px 0;
+                        font-size: 16px;
+                        color: #000;
+                        margin-bottom: 30px;
+                        border: none;
+                        border-bottom: 1px solid black;
+                        outline: none;
+                        background: transparent;
+
+                        &:focus~label {
+                            top: -20px;
+                            left: 0;
+                            color: #352901;
+                            font-size: 12px;
+                        }
+
+                        &:valid~label {
+                            top: -20px;
+                            left: 0;
+                            color: #035c07;
+                        }
+
+                    }
+                }
+
+                .button {
+                    display: flex;
+                    align-items: center;
+                    gap: 10px;
+
+                    button {
+                        font-size: 13px;
+                        font-weight: 600;
+                        background: #07b274;
+                        color: white;
+                        cursor: pointer;
+                        padding: 10px 40px;
+                        border-color: transparent;
+                        border-radius: 15px;
+                        transition: all 0.2s linear;
+
+                        &:hover {
+                            color: #07b274;
+                            background: transparent;
+                            border: 2px solid #07b274;
+                        }
+                    }
+
+                    p {
+                        font-size: 14px;
+                        font-weight: 400;
+
+                        &:hover {
+                            color: #07b274;
+                        }
+                    }
+                }
+            }
+
+            h3 {
+                font-size: 16px;
+                font-weight: 600;
+            }
+
+            .social_icons {
+                font-size: 30px;
+                display: flex;
+                align-items: center;
+                gap: 40px;
+
+                .google {
+                    background: #e9e8e8;
+                    border-radius: 50%;
+                    padding: 5px;
+
+                }
+
+                .login_google {
+                    background: white;
+                    font-size: 35px;
+                    border-radius: 50%;
+                }
+
+                .linkedin {
+                    color: white;
+                    background: #00acee;
+                    padding: 5px;
+                    border-radius: 50%;
+                }
+
+                .facebook {
+                    color: #fff;
+                    background: #466ab4;
+                    padding: 5px;
+                    border-radius: 50%;
+
+                }
+            }
+
+            p {
+                font-size: 16px;
+                font-weight: 400;
+
+                a {
+                    cursor: pointer;
+                    color: #07b274;
+                }
+            }
+        }
+    }
+
+    @media (max-width:1100px) {
+        a p {
+            font-size: 38px;
+        }
+
+        .form_main_container .left_container,
+        .form_main_container .right_container {
+            .heading {
+                font-size: 20px;
+            }
+
+            .firse {
+                font-size: 16px;
+            }
+
+            .secound {
+                font-size: 14px;
+            }
+        }
+
+        .form_main_container .right_container {
+            h3 {
+                font-size: 14px;
+            }
+
+            p {
+                font-size: 14px;
+            }
+
+            .social_icons .login_google {
+                padding: 0;
+            }
+        }
+    }
+
+    @media (max-width:750px) {
+        a p {
+            font-size: 35px;
+        }
+
+        .form_main_container {
+            width: 90%;
+        }
+
+        .form_main_container .right_container {
+            .social_icons .login_google {
+                padding: 0;
+            }
+        }
+    }
+
+    @media (max-width:500px) {
+        gap: 50px;
+
+        a p {
+            font-size: 30px;
+        }
+
+        .form_main_container {
+            width: 90%;
+            grid-template-columns: none;
+
+            .right_container .reverse {
+                flex-direction: column;
+            }
+
+            .left_container {
+                height: auto;
+
+                img,
+                .first,
+                .secound {
+                    display: none;
+                }
+
+            }
+        }
+
+
+
+    }
+}
